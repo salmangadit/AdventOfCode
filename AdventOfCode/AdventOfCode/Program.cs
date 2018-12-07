@@ -13,12 +13,10 @@
             new Day2(),
             new Day3(),
             new Day4(),
-            new Day5()
+            new Day7()
         };
         static void Main(string[] args)
         {
-            var input = Input.Get(2018, 1).Result;
-
             foreach (var d in days)
             {
                 d.Run();
