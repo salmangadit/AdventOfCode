@@ -9,12 +9,13 @@
     {
         static List<IDay> days = new List<IDay>
         {
-            new Day1(),
-            new Day2(),
-            new Day3(),
-            new Day4(),
-            new Day6(),
-            new Day7()
+            //new Day1(),
+            //new Day2(),
+            //new Day3(),
+            //new Day4(),
+            //new Day6(),
+            //new Day7(),
+            new Day8()
         };
         static void Main(string[] args)
         {
