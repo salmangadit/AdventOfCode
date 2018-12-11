@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using Common;
 
     class Program
@@ -16,7 +15,8 @@
             //new Day6(),
             //new Day7(),
             //new Day8(),
-            new Day9()
+            //new Day9(),
+            new Day10()
         };
         static void Main(string[] args)
         {
@@ -24,8 +24,8 @@
             {
                 d.Run();
             }
-
-            //new Day9().Run("10 players; last marble is worth 1618 points");
+            
+            //new Day10().Run(t);
 
             Console.WriteLine("Press Enter to End.");
             Console.ReadLine();

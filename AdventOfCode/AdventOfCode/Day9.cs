@@ -14,12 +14,7 @@
             var split = Regex.Split(this.fullInput, @"(\d+) players; last marble is worth (\d+) points");
             var playerCount = int.Parse(split[1]);
             var lastMarble = int.Parse(split[2]);
-
-            Node currentMarble = null;
-            Dictionary<int, int> scores = new Dictionary<int, int>();
-            currentMarble = BuildList(playerCount, lastMarble, currentMarble, scores);
-
-            return scores.Max(a => a.Value);
+            return (int)HighestScore(playerCount, lastMarble);
         }
 
         public override long Part2()
@@ -27,16 +22,13 @@
             var split = Regex.Split(this.fullInput, @"(\d+) players; last marble is worth (\d+) points");
             var playerCount = int.Parse(split[1]);
             var lastMarble = int.Parse(split[2]) * 100;
-
-            Node currentMarble = null;
-            Dictionary<int, long> scores = new Dictionary<int, long>();
-            currentMarble = BuildList(playerCount, lastMarble, currentMarble, scores);
-                
-            return scores.Max(a => a.Value);
+            return HighestScore(playerCount, lastMarble);
         }
 
-        private static Node BuildList(int playerCount, int lastMarble, Node currentMarble, Dictionary<int, int> scores)
+        private static long HighestScore(int playerCount, int lastMarble)
         {
+            Node currentMarble = null;
+            Dictionary<int, long> scores = new Dictionary<int, long>();
             // Construct circular linked list
             for (var i = 0; i <= lastMarble; i++)
             {
@@ -93,7 +85,7 @@
                 }
             }
 
-            return currentMarble;
+            return scores.Max(a => a.Value);
         }
 
         private class Node
