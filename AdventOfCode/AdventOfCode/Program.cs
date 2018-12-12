@@ -17,7 +17,8 @@
             //new Day8(),
             //new Day9(),
             //new Day10()
-            new Day11()
+            //new Day11()
+            new Day12()
         };
         static void Main(string[] args)
         {
@@ -25,8 +26,26 @@
             {
                 d.Run();
             }
-            
-            //new Day10().Run(t);
+
+            var t =
+                "initial state: #..#.#..##......###...###\n" +
+                "\n" +
+                "...## => #\n" +
+                "..#.. => #\n" +
+                ".#... => #\n" +
+                ".#.#. => #\n" +
+                ".#.## => #\n" +
+                ".##.. => #\n" +
+                ".#### => #\n" +
+                "#.#.# => #\n" +
+                "#.### => #\n" +
+                "##.#. => #\n" +
+                "##.## => #\n" +
+                "###.. => #\n" +
+                "###.# => #\n" +
+                "####. => #\n";
+
+            new Day12().Run(t);
 
             Console.WriteLine("Press Enter to End.");
             Console.ReadLine();
