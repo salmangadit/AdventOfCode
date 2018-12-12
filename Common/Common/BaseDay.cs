@@ -14,6 +14,13 @@
             this.inputs = this.fullInput.Split('\n', StringSplitOptions.RemoveEmptyEntries);
         }
 
+        public BaseDay(string input, int day)
+        {
+            this.day = day;
+            this.fullInput = input.Trim();
+            this.inputs = this.fullInput.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+        }
+
         public void Run()
         {
             Console.WriteLine("==================================================");

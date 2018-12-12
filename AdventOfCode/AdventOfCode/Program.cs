@@ -16,7 +16,8 @@
             //new Day7(),
             //new Day8(),
             //new Day9(),
-            new Day10()
+            //new Day10()
+            new Day11()
         };
         static void Main(string[] args)
         {
