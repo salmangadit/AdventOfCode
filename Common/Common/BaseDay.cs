@@ -10,7 +10,7 @@
         public BaseDay(int year, int day)
         {
             this.day = day;
-            this.fullInput = Input.Get(year, day).Result.Trim();
+            this.fullInput = Input.Get(year, day).Result;
             this.inputs = this.fullInput.Split('\n', StringSplitOptions.RemoveEmptyEntries);
         }
 
