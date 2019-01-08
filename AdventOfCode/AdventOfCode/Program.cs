@@ -19,6 +19,7 @@
             //new Day10()
             //new Day11()
             //new Day12()
+            //new Day13()
         };
         static void Main(string[] args)
         {
@@ -27,25 +28,7 @@
                 d.Run();
             }
 
-            var t =
-                "/->-\\        \n" +
-                "|   |  /----\\\n" +
-                "| /-+--+-\\  |\n" +
-                "| | |  | v  |\n" +
-                "\\-+-/  \\-+--/\n" +
-                "  \\------/   \n";
-
-            var t2 =
-                "/>-<\\  \n" +
-                "|   |  \n" +
-                "| /<+-\\\n" +
-                "| | | v\n" +
-                "\\>+</ |\n" +
-                "  |   ^\n" +
-                "  \\<->/\n";
-
-
-            new Day13().Run();
+            new Day14().Run();
 
             Console.WriteLine("Press Enter to End.");
             Console.ReadLine();
