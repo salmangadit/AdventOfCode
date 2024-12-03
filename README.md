@@ -1,1 +1,1 @@
-# AoC2018
+# Advent Of Code - Salman's adventures
