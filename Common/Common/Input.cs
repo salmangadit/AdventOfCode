@@ -6,7 +6,7 @@
 
     public class Input
     {
-        private const string SessionId = "53616c7465645f5fd38179d0788c5028bd2bb35b1b1ee8eebbe2eb2295c43a78583a7008a649d212811b7e3d15647972";
+        private const string SessionId = "53616c7465645f5fb0a7912ae10be6f904f1da5e24ed0057540b32c95fafb16a613c3065c755aa12fe0860d02cba16dfa9649d14c79c15435296590230fb12f7";
 
         public static async Task<string> Get(int year, int day)
         {

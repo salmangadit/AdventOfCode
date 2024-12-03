@@ -20,6 +20,8 @@
             //new Day11()
             //new Day12()
             //new Day13()
+            new Y2024.Day1(),
+            new Y2024.Day2()
         };
         static void Main(string[] args)
         {
@@ -27,8 +29,8 @@
             {
                 d.Run();
             }
-
-            new Day14().Run();
+            new Y2024.Day2().Run("7 6 4 2 1\n1 2 7 8 9\n9 7 6 2 1\n1 3 2 4 5\n8 6 4 4 1\n1 3 6 7 9");
+            //new Day14().Run();
 
             Console.WriteLine("Press Enter to End.");
             Console.ReadLine();
