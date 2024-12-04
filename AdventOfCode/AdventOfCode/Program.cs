@@ -22,7 +22,8 @@
             //new Day13()
             new Y2024.Day1(),
             new Y2024.Day2(),
-            new Y2024.Day3()
+            new Y2024.Day3(),
+            new Y2024.Day4()
         };
         static void Main(string[] args)
         {
@@ -30,7 +31,7 @@
             {
                 d.Run();
             }
-            new Y2024.Day3().Run("xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))\n");
+            //new Y2024.Day4().Run("MMMSXXMASM\nMSAMXMSMSA\nAMXSXMAAMM\nMSAMASMSMX\nXMASAMXAMM\nXXAMMXXAMA\nSMSMSASXSS\nSAXAMASAAA\nMAMMMXMMMM\nMXMXAXMASX");
             //new Day14().Run();
 
             Console.WriteLine("Press Enter to End.");
