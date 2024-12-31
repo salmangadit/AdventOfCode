@@ -82,17 +82,16 @@
 
             // Set obstacle
             mapWithObstacle[obstacle.Item1][obstacle.Item2] = '#';
+            var xCount = 0;
 
-            var obstacleHitCount = 0;
-            while (!Move(mapWithObstacle, currPos, out currPos)) 
+            while (!Move(mapWithObstacle, currPos, out currPos, out bool alreadyX)) 
             {
-                if ((currPos.Item1 == obstacle.Item1 || currPos.Item1 -1 == obstacle.Item1 || currPos.Item1 + 1 == obstacle.Item1) &&
-                    (currPos.Item2 == obstacle.Item2 || currPos.Item2 - 1 == obstacle.Item2 || currPos.Item2 + 1 == obstacle.Item2))
+                if (alreadyX)
                 {
-                    obstacleHitCount++;
+                    xCount++;
                 }
 
-                if (obstacleHitCount > 8)
+                if (xCount > 1000)
                 {
                     return true;
                 }
@@ -103,17 +102,17 @@
         public List<List<char>> MoveUntilFinished(List<List<char>> map, (int, int) start)
         {
             var currPos = start;
-            while (!Move(map, currPos, out currPos)) { }
+            while (!Move(map, currPos, out currPos, out bool alreadyX)) { }
             return map;
         }
 
-        public bool Move(List<List<char>> map, (int, int) currCharacterPos, out (int, int) newCharacterPos)
+        public bool Move(List<List<char>> map, (int, int) currCharacterPos, out (int, int) newCharacterPos, out bool alreadyX)
         {
             if (!CharacterDirection.Any(a => a == map[currCharacterPos.Item1][currCharacterPos.Item2]))
             {
                 throw new Exception("Invalid character position");
             }
-
+            alreadyX = false;
             if (map[currCharacterPos.Item1][currCharacterPos.Item2] == '^')
             {
                 if (currCharacterPos.Item1 == 0)
@@ -136,6 +135,7 @@
                     // Just move
                     map[currCharacterPos.Item1][currCharacterPos.Item2] = 'X';
                     newCharacterPos = (currCharacterPos.Item1 - 1, currCharacterPos.Item2);
+                    alreadyX = map[newCharacterPos.Item1][newCharacterPos.Item2] == 'X';
                     map[newCharacterPos.Item1][newCharacterPos.Item2] = '^';
                     return false;
                 }
@@ -162,6 +162,7 @@
                     // Just move
                     map[currCharacterPos.Item1][currCharacterPos.Item2] = 'X';
                     newCharacterPos = (currCharacterPos.Item1, currCharacterPos.Item2 - 1);
+                    alreadyX = map[newCharacterPos.Item1][newCharacterPos.Item2] == 'X';
                     map[newCharacterPos.Item1][newCharacterPos.Item2] = '<';
                     return false;
                 }
@@ -188,6 +189,7 @@
                     // Just move
                     map[currCharacterPos.Item1][currCharacterPos.Item2] = 'X';
                     newCharacterPos = (currCharacterPos.Item1 + 1, currCharacterPos.Item2);
+                    alreadyX = map[newCharacterPos.Item1][newCharacterPos.Item2] == 'X';
                     map[newCharacterPos.Item1][newCharacterPos.Item2] = 'v';
                     return false;
                 }
@@ -214,6 +216,7 @@
                     // Just move
                     map[currCharacterPos.Item1][currCharacterPos.Item2] = 'X';
                     newCharacterPos = (currCharacterPos.Item1, currCharacterPos.Item2 + 1);
+                    alreadyX = map[newCharacterPos.Item1][newCharacterPos.Item2] == 'X';
                     map[newCharacterPos.Item1][newCharacterPos.Item2] = '>';
                     return false;
                 }
